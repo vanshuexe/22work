@@ -1,5 +1,6 @@
 import { company } from "@/lib/company";
 import { PageBanner } from "@/components/CompanySections";
+import { ContactForm } from "@/components/ContactForm";
 export const metadata = {
   title: "Contact Us",
   description:
@@ -33,6 +34,14 @@ export default function Contact() {
               </a>
             </div>
           </div>
+        </div>
+      </section>
+      <section className="ras-section">
+        <div className="container">
+          <span className="title-sm">Leave a Message</span>
+          <h2 className="section_title">Get in Touch With Us</h2>
+          <p>Tell us about your project and our team will get back to you.</p>
+          <ContactForm />
         </div>
       </section>
       <section className="ras-section">

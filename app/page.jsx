@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { HeroSlider } from "@/components/Interactions";
-import { ServicesSection } from "@/components/CompanySections";
+import { ClientsSection, ServicesSection } from "@/components/CompanySections";
 import { company } from "@/lib/company";
 export const metadata = {
   title: "RAS Coating | Industrial Flooring & Waterproofing in Pune",
@@ -28,16 +28,19 @@ export default function Home() {
             <div className="col-lg-6">
               <span className="title-sm">Welcome to RAS Coating</span>
               <h2 className="section_title">
-                Flooring & coating solutions for your space
+                Industrial & Residential Flooring or Coatings
               </h2>
               <p>
-                Based in Chikhali, Pune, RAS Coating provides PU flooring, epoxy
-                flooring, waterproofing, self leveling, car parking, epoxy coving and all types of
-                industrial floor coating solutions.
+                RAS Coating provides professional flooring, coating, and
+                waterproofing solutions for industrial and commercial projects.
               </p>
               <p>
-                Speak with our team about your site, surface condition and
-                project requirements.
+                Our services include epoxy flooring, PU flooring, self-leveling
+                flooring, car parking coatings, epoxy coving, and waterproofing.
+              </p>
+              <p>
+                We focus on quality workmanship, reliable execution, and
+                solutions tailored to each project's requirements.
               </p>
               <Link className="btn-read" href="/contact-us">
                 Discuss Your Project →
@@ -47,6 +50,7 @@ export default function Home() {
         </div>
       </section>
       <ServicesSection />
+      <ClientsSection />
       <section className="ras-cta">
         <div className="container">
           <h2>Let’s discuss your flooring requirements</h2>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { services } from "@/lib/company";
 import { GalleryLink } from "@/components/Interactions";
 
 export const metadata = {
@@ -34,7 +35,16 @@ export default function Page() {
           <div className="row justify-content-center align-items-center">
             <div className="col-lg-8 col-md-8 col-sm-12">
               <div className="product_block prod-mb">
-                <p>A wide range, from standard coating to self levelers &amp; very high chemical resistant antistatic floor to suit every production pattern.</p>
+                <h2>Industrial Epoxy Flooring</h2>
+                <p>Epoxy flooring provides a seamless, durable surface for many industrial and commercial applications.</p>
+                <p>Depending on the selected system, it can offer abrasion resistance, easy maintenance, and protection against specified chemicals. System selection depends on the floor condition and the project's operational requirements.</p>
+                {(() => { const item = services.find((x) => x.slug === "epoxy-floor"); return item ? (
+                  <div className="ras-detail">
+                    <h3>Applications</h3>
+                    <ul>{item.applications.map((a) => <li key={a}>{a}</li>)}</ul>
+                    <p><strong>Scope:</strong> {item.scope}</p>
+                  </div>
+                ) : null; })()}
               </div>
             </div>
             <div className="col-lg-3 col-md-4 col-sm-6">

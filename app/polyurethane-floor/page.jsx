@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { services } from "@/lib/company";
 import { GalleryLink } from "@/components/Interactions";
 
 export const metadata = {
@@ -35,7 +36,16 @@ export default function Page() {
           <div className="row justify-content-center align-items-center">
             <div className="col-lg-8 col-md-8 col-sm-12">
               <div className="product_block prod-mb">
-                <p>A wide range from Urethane floor, coating, self levelers &amp; screeds with very high chemical resistance and thermal stability for very tough industrial environment, highly sustainable for wet process areas.</p>
+                <h2>Polyurethane (PU) Flooring</h2>
+                <p>Polyurethane flooring systems are suitable for selected industrial environments, including applications that require resistance to chemicals, temperature variations, or regular cleaning.</p>
+                <p>The appropriate system depends on operating conditions, substrate condition, and project specifications. RAS Coating helps clients identify suitable flooring solutions based on their site requirements.</p>
+                {(() => { const item = services.find((x) => x.slug === "polyurethane-floor"); return item ? (
+                  <div className="ras-detail">
+                    <h3>Applications</h3>
+                    <ul>{item.applications.map((a) => <li key={a}>{a}</li>)}</ul>
+                    <p><strong>Scope:</strong> {item.scope}</p>
+                  </div>
+                ) : null; })()}
               </div>
             </div>
             <div className="col-lg-3 col-md-4 col-sm-6">

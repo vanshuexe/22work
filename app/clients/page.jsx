@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PageBanner, ServicesSection } from "@/components/CompanySections";
+import { PageBanner, ServicesSection, ClientsSection } from "@/components/CompanySections";
 export const metadata = {
   title: "Client Enquiries",
   description:
@@ -8,7 +8,7 @@ export const metadata = {
 export default function Clients() {
   return (
     <main>
-      <PageBanner title="Client Enquiries" />
+      <PageBanner title="Our Clients" />
       <section className="ras-section">
         <div className="container">
           <h2 className="section_title">Tell us about your project</h2>
@@ -22,6 +22,7 @@ export default function Clients() {
           </Link>
         </div>
       </section>
+      <ClientsSection />
       <ServicesSection />
     </main>
   );

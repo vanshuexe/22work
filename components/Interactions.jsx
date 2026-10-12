@@ -7,6 +7,30 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, A11y } from "swiper/modules";
 import "swiper/css";
 
+const heroSlides = [
+  {
+    label: "RAS Coating",
+    title: "Industrial & Residential Flooring or Coatings",
+    text: "Professional flooring, coating, and waterproofing solutions for industrial and commercial projects.",
+    href: "/contact-us",
+    cta: "Contact Us",
+  },
+  {
+    label: "Epoxy & PU Flooring",
+    title: "Durable Floors Built for Your Site",
+    text: "Epoxy, PU and self-leveling floor systems selected around your floor condition and operating requirements.",
+    href: "/epoxy-floor",
+    cta: "Explore Flooring",
+  },
+  {
+    label: "Waterproofing & Parking",
+    title: "Protection for Roofs, Terraces and Parking Floors",
+    text: "Waterproofing and car parking coatings that help protect structures and keep surfaces in working order.",
+    href: "/waterproofing",
+    cta: "Explore Waterproofing",
+  },
+];
+
 export function HeroSlider() {
   return (
     <Swiper
@@ -20,29 +44,27 @@ export function HeroSlider() {
       }}
       navigation={{ prevEl: ".hero-button-prev", nextEl: ".hero-button-next" }}
     >
-      {[1, 2, 3].map((n) => (
+      {heroSlides.map((slide, index) => {
+        const n = index + 1;
+        return (
         <SwiperSlide key={n}>
-          <div className="shape1" />
           <div
             className="image-layer"
             style={{
-              backgroundImage: `linear-gradient(90deg, rgba(7, 20, 42, 0.72), rgba(7, 20, 42, 0.18)), url(/assets/hero-generated/hero-${n}.png)`,
+              backgroundImage: `linear-gradient(90deg, rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.12)), url(/assets/hero-generated/hero-${n}.png)`,
             }}
           />
           <div className="container">
             <div className="row">
               <div className="col-xl-12">
                 <div className="heroleft_content">
-                  <h6 className="sub-title">RAS Coating · Pune</h6>
-                  <h1>Industrial Flooring & Coating Solutions</h1>
-                  <p>
-                    PU flooring, epoxy flooring, waterproofing, self leveling
-                    and all types of industrial floor coating solution.
-                  </p>
+                  <h6 className="sub-title">{slide.label}</h6>
+                  {index === 0 ? <h1>{slide.title}</h1> : <h2 className="hero-title">{slide.title}</h2>}
+                  <p>{slide.text}</p>
                   <div className="hero-btn">
                     <div className="btn-box">
-                      <Link className="btn-white" href="/contact-us">
-                        Contact Us{" "}
+                      <Link className="btn-white" href={slide.href}>
+                        {slide.cta}{" "}
                         <i className="fa-regular fa-arrow-right-long" />
                       </Link>
                     </div>
@@ -52,7 +74,8 @@ export function HeroSlider() {
             </div>
           </div>
         </SwiperSlide>
-      ))}
+        );
+      })}
       <div className="hero-slider-btn">
         <button
           type="button"

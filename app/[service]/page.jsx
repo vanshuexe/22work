@@ -28,6 +28,21 @@ export default async function ServicePage({ params }) {
             <div className={item.image ? "col-lg-7" : "col-lg-12"}>
               <h2 className="section_title">{item.name}</h2>
               <p>{item.description}</p>
+              {item.applications && (
+                <div className="ras-detail">
+                  <h3>Applications</h3>
+                  <ul>
+                    {item.applications.map((a) => (
+                      <li key={a}>{a}</li>
+                    ))}
+                  </ul>
+                  {item.scope && (
+                    <p>
+                      <strong>Scope:</strong> {item.scope}
+                    </p>
+                  )}
+                </div>
+              )}
               <p>
                 Share your site location, floor area and requirements with our
                 team to discuss the next steps.
