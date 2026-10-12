@@ -26,7 +26,7 @@ export function HeroSlider() {
           <div
             className="image-layer"
             style={{
-              backgroundImage: `url(/assets/img/slider/slider${n}.jpg)`,
+              backgroundImage: `linear-gradient(90deg, rgba(7, 20, 42, 0.72), rgba(7, 20, 42, 0.18)), url(/assets/hero-generated/hero-${n}.png)`,
             }}
           />
           <div className="container">

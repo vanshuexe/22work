@@ -1,7 +1,6 @@
 import {
   PageBanner,
   ServicesSection,
-  TeamSection,
 } from "@/components/CompanySections";
 export const metadata = {
   title: "About Us",
@@ -11,7 +10,7 @@ export const metadata = {
 export default function About() {
   return (
     <main>
-      <PageBanner title="About RAS Coating" />
+      <PageBanner title="About RAS Coating" image="/assets/hero-generated/about-banner.png" />
       <section className="ras-section">
         <div className="container">
           <div className="row align-items-center g-4">
@@ -33,14 +32,13 @@ export default function About() {
             <div className="col-lg-5">
               <img
                 className="ras-about-photo"
-                src="/assets/img/about-img.jpg"
-                alt="Industrial flooring application"
+                src="/assets/hero-generated/about-flooring.png"
+                alt="Professional workers applying an industrial floor coating"
               />
             </div>
           </div>
         </div>
       </section>
-      <TeamSection />
       <ServicesSection />
     </main>
   );

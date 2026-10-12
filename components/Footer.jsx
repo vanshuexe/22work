@@ -16,7 +16,7 @@ export default function Footer() {
                 <Logo />
               </Link>
               <p className="clr-white-2">
-                PU flooring, epoxy flooring, waterproofing, self leveling and
+                PU flooring, epoxy flooring, waterproofing, self leveling, car parking, epoxy coving and
                 industrial floor coating solutions in Pune.
               </p>
             </div>
@@ -37,16 +37,6 @@ export default function Footer() {
                 <h4 className="section-24">Get in Touch</h4>
                 <p className="clr-white">{company.address}</p>
                 <a href={"mailto:" + company.email}>{company.email}</a>
-                <ul className="ras-footer-contacts">
-                  {company.contacts.map((person) => (
-                    <li key={person.tel}>
-                      <span>
-                        {person.name} · {person.role}
-                      </span>
-                      <a href={"tel:" + person.tel}>{person.phone}</a>
-                    </li>
-                  ))}
-                </ul>
               </div>
             </div>
           </div>

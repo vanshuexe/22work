@@ -9,7 +9,7 @@ export const metadata = {
     template: "%s | RAS Coating",
   },
   description:
-    "RAS Coating in Pune: PU flooring, epoxy flooring, waterproofing, self leveling and industrial floor coating solutions.",
+    "RAS Coating in Pune: PU flooring, epoxy flooring, waterproofing, self leveling, car parking, epoxy coving and industrial floor coating solutions.",
   icons: { icon: "/assets/ras-icon.svg" },
 };
 

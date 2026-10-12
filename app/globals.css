@@ -1,4 +1,5 @@
 /* React navigation, gallery and accessibility additions to the original design. */
+/* Shared responsive layout rules override the original template below. */
 html:root {
   --theme: #123781;
   --theme2: #091d43;
@@ -273,7 +274,7 @@ body {
 }
 a:focus-visible,
 button:focus-visible {
-  outline: 3px solid #ec7216;
+  outline: 3px solid #4b8ffc;
   outline-offset: 4px;
 }
 .gallery-dialog {
@@ -412,4 +413,111 @@ button:focus-visible {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
+}
+/* Responsive refinements shared by every page. */
+body main, body footer, body header {
+  overflow-wrap: anywhere;
+}
+body .row > *, body .ras-services > *, body .ras-office > * {
+  min-width: 0;
+}
+body .ras-about-photo { display: block; height: auto; }
+body .ras-service-card { display: flex; flex-direction: column; height: 100%; }
+body .ras-service-card > div { display: flex; flex-direction: column; flex: 1; }
+body .ras-service-card .ras-link { margin-top: auto; padding-top: 12px; }
+body .ras-service-card h3 { font-size: clamp(21px, 2vw, 24px); line-height: 1.3; }
+body .section_title { font-size: clamp(27px, 3vw, 40px); line-height: 1.25; }
+body .breadcrumb-style-1 { padding: clamp(48px, 7vw, 90px) 0; }
+body .breadcrumb-style-1 .breadcrumb-title {
+  font-size: clamp(28px, 4vw, 46px);
+  line-height: 1.2;
+}
+body .breadcrumb-list { line-height: 1.7; }
+body .hero-2 .heroleft_content .sub-title,
+body .hero-2 .heroleft_content h1,
+body .hero-2 .heroleft_content p,
+body .hero-2 .heroleft_content .hero-btn,
+body .hero-2 .heroleft_content a {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+body .hero-2 .heroleft_content { padding: 100px 70px; max-width: 850px; }
+body .hero-2 .heroleft_content h1 { font-size: clamp(30px, 4vw, 48px); line-height: 1.2; }
+body .hero-2 .wrapper .swiper-slide { height: auto; min-height: 500px; }
+body .site-menu .submenu { width: 300px; max-width: calc(100vw - 32px); }
+body .site-menu .submenu a { white-space: normal; line-height: 1.5; }
+body .footer-wrap { padding: 44px 0; }
+body .footer-area .quiklinks a { overflow-wrap: anywhere; line-height: 1.6; }
+body .gallery-dialog { max-height: 95dvh; border-radius: 8px; }
+body .gallery-dialog figure img { max-height: 72dvh; }
+@media (max-width: 991px) {
+  body .site-navigation { gap: 12px; }
+  body .site-header .header-logo { min-width: 0; flex: 1; top: 0; }
+  body .site-header .ras-logo { width: min(250px, calc(100vw - 105px)); }
+  body .mobile-toggle { min-width: 44px; min-height: 44px; padding: 4px 10px; }
+  body .site-menu { flex-basis: 100%; }
+  body .site-menu nav > ul { width: 100%; }
+  body .site-menu .submenu { max-width: 100%; }
+  body .site-menu .submenu a { padding: 12px 16px !important; }
+  body .hero-2 .heroleft_content { padding: 70px 55px; }
+  body .hero-2 .wrapper .swiper-slide { min-height: 440px; }
+  body .ras-about-photo { max-height: 520px; object-fit: cover; }
+  body .gallery-dialog { padding: 55px 48px 20px; }
+  body .product-gallery .plus-icon,
+  body .product-gallery:hover .plus-icon {
+    opacity: 1;
+    top: auto;
+    left: auto;
+    right: 8px;
+    bottom: 8px;
+    transform: none;
+    padding: 0;
+  }
+  body .product-gallery .plus-icon a {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    background: #091d43;
+    color: white;
+    border-radius: 50%;
+    font-size: 22px;
+  }
+}
+@media (max-width: 575px) {
+  body .site-header .header-top-area { padding: 8px 0; }
+  body .header-top-left .info a { font-size: 14px; }
+  body .site-navigation { padding: 12px 0; }
+  body .ras-section, body .ras-cta { padding: 36px 0; }
+  body .hero-2 .heroleft_content { padding: 48px 0 80px; }
+  body .hero-2 .heroleft_content p { font-size: 16px; line-height: 1.65; padding-right: 0; }
+  body .hero-2 .wrapper .swiper-slide { min-height: 410px; }
+  body .hero-2 .wrapper .hero-slider-btn { display: block; top: auto; bottom: 52px; }
+  body .hero-2 .wrapper .hero-slider-btn .slider-btn { width: 40px; height: 40px; line-height: 40px; font-size: 16px; }
+  body .hero-2 .wrapper .hero-slider-btn .hero-button-prev { left: 16px; }
+  body .hero-2 .wrapper .hero-slider-btn .hero-button-next { right: 16px; }
+  body .ras-service-card img { height: 210px; }
+  body .ras-service-card > div { padding: 20px; }
+  body .ras-map { height: 300px; }
+  body .ras-cta h2 { font-size: 28px; line-height: 1.3; }
+  body .product_block.prod-mb p { padding: 12px 16px; }
+  body .product_block .shape1 { display: none; }
+  body .footer-wrap { padding: 32px 0; }
+  body .gallery-dialog { width: calc(100vw - 16px); padding: 56px 36px 16px; }
+  body .gallery-dialog button { min-width: 36px; min-height: 44px; }
+}
+/* Blue brand accents for hero decoration, gallery hovers and breadcrumbs. */
+body .hero-2 .shape1 {
+  background: #3873d9;
+}
+body .hero-2 .image-layer::before {
+  background-color: rgba(7, 20, 42, 0.35);
+}
+body .gallery-thumb:hover::before,
+body .product-gallery .gallery-thumb:hover::before {
+  background: rgb(18 55 129 / 50%);
+}
+body .breadcrumb-style-1 .breadcrumb-list span.active {
+  color: #c3dcff;
 }

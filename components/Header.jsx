@@ -6,18 +6,10 @@ import { useEffect, useState } from "react";
 import Logo from "@/components/Logo";
 import { company, services } from "@/lib/company";
 
-const products = [
-  ...services.map((service) => [service.name, service.slug]),
-  ["MMA Floor", "mma-floor"],
-  ["Chemical Lining", "chemical-lining"],
-  ["Terrazzo Floor", "terrazzo-floor"],
-  ["Concrete Styles", "concrete-styles"],
-  ["Aircraft Hangar", "aircraft-hangar"],
-];
+const products = services.map((service) => [service.name, service.slug]);
 const links = [
   ["Home", "/"],
   ["About us", "/about-us"],
-  ["Applications", "/applications"],
   ["Enquiries", "/clients"],
   ["Contact us", "/contact-us"],
 ];
@@ -59,12 +51,6 @@ export default function Header() {
                 <div className="info d-flex">
                   <i className="fa-sharp fa-solid fa-envelope" />
                   <a href={"mailto:" + company.email}>{company.email}</a>
-                </div>
-                <div className="info d-flex">
-                  <i className="fa-sharp fa-solid fa-phone" />
-                  <a href={"tel:" + company.contacts[0].tel}>
-                    {company.contacts[0].phone}
-                  </a>
                 </div>
               </div>
             </div>

@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { HeroSlider, GalleryLink } from "@/components/Interactions";
-import { ServicesSection, TeamSection } from "@/components/CompanySections";
+import { HeroSlider } from "@/components/Interactions";
+import { ServicesSection } from "@/components/CompanySections";
 import { company } from "@/lib/company";
 export const metadata = {
   title: "RAS Coating | Industrial Flooring & Waterproofing in Pune",
   description:
-    "RAS Coating in Chikhali, Pune: PU flooring, epoxy flooring, waterproofing, self leveling and industrial floor coating solutions.",
+    "RAS Coating in Chikhali, Pune: PU flooring, epoxy flooring, waterproofing, self leveling, car parking, epoxy coving and industrial floor coating solutions.",
 };
 export default function Home() {
   return (
@@ -21,8 +21,8 @@ export default function Home() {
             <div className="col-lg-6">
               <img
                 className="ras-about-photo"
-                src="/assets/img/home-about1.jpg"
-                alt="Industrial floor surface"
+                src="/assets/hero-generated/welcome-flooring.png"
+                alt="Professional floor coating work in an industrial facility"
               />
             </div>
             <div className="col-lg-6">
@@ -32,7 +32,7 @@ export default function Home() {
               </h2>
               <p>
                 Based in Chikhali, Pune, RAS Coating provides PU flooring, epoxy
-                flooring, waterproofing, self leveling and all types of
+                flooring, waterproofing, self leveling, car parking, epoxy coving and all types of
                 industrial floor coating solutions.
               </p>
               <p>
@@ -47,26 +47,6 @@ export default function Home() {
         </div>
       </section>
       <ServicesSection />
-      <TeamSection />
-      <section className="ras-section">
-        <div className="container">
-          <h2 className="section_title">Flooring Applications</h2>
-          <div className="ras-gallery">
-            {[1, 2, 3, 4, 5, 6].map((n) => (
-              <GalleryLink
-                key={n}
-                href={`/assets/img/gallery/gallery${n}${[2, 4, 6].includes(n) ? "-big" : ""}.jpg`}
-              >
-                <img
-                  src={`/assets/img/gallery/gallery${n}.jpg`}
-                  alt="Industrial flooring application"
-                  loading="lazy"
-                />
-              </GalleryLink>
-            ))}
-          </div>
-        </div>
-      </section>
       <section className="ras-cta">
         <div className="container">
           <h2>Let’s discuss your flooring requirements</h2>

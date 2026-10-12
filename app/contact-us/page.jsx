@@ -1,18 +1,18 @@
 import { company } from "@/lib/company";
-import { PageBanner, TeamSection } from "@/components/CompanySections";
+import { PageBanner } from "@/components/CompanySections";
 export const metadata = {
   title: "Contact Us",
   description:
-    "Contact RAS Coating in Chikhali, Pune. Ramesh Singh: +91 63947 13287. Email rascoating@gmail.com.",
+    "Contact RAS Coating in Chikhali, Pune. Email rascoating@gmail.com.",
 };
 export default function Contact() {
   const mapQuery = encodeURIComponent(company.address);
   return (
     <main>
-      <PageBanner title="Contact RAS Coating" />
+      <PageBanner title="Contact RAS Coating" image="/assets/hero-generated/contact-banner.png" />
       <section className="ras-section">
         <div className="container">
-          <div className="ras-office">
+          <div className="ras-office" style={{ gridTemplateColumns: "1fr" }}>
             <div>
               <span className="title-sm">Get in Touch</span>
               <h2 className="section_title">Our Pune Office</h2>
@@ -21,8 +21,7 @@ export default function Contact() {
                 {company.email}
               </a>
               <p>
-                For flooring, coating or waterproofing enquiries, call one of
-                our team members below.
+                For flooring, coating or waterproofing enquiries, email our team.
               </p>
               <a
                 className="btn-read"
@@ -33,14 +32,9 @@ export default function Contact() {
                 Get Directions →
               </a>
             </div>
-            <img
-              src="/assets/ras-business-card.jpeg"
-              alt="RAS Coating business card with office address, team contact numbers and services"
-            />
           </div>
         </div>
       </section>
-      <TeamSection />
       <section className="ras-section">
         <div className="container">
           <iframe
