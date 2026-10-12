@@ -597,3 +597,8 @@ body .hero-2 .heroleft_content .hero-title { font-size: clamp(30px, 4vw, 48px); 
 .ras-approach p { margin: 0; font-size: 15px; }
 @media (max-width: 991px) { .ras-approach { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 575px) { .ras-approach { grid-template-columns: 1fr; } .ras-founder-card { flex-direction: column; align-items: flex-start; padding: 20px; } }
+
+/* Prevent image drag/selection and keep the cropped logo from being squeezed. */
+img { -webkit-user-drag: none; user-select: none; -webkit-user-select: none; }
+.ras-logo { flex-shrink: 0; min-width: 0; pointer-events: none; }
+.ras-logo img { pointer-events: none; flex-shrink: 0; }

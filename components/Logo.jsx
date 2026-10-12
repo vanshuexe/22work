@@ -6,6 +6,7 @@ export default function Logo() {
         alt="RAS Coating"
         width="1280"
         height="753"
+        draggable={false}
       />
     </span>
   );
